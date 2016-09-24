@@ -69,7 +69,6 @@ public class CreateRegForm {
                 "Дом:" + homeNumber + '\n' +
                 "Квартира:" + flatNumber + '\n' +
                 "Дата регистрации:'" + dateOfRegistration + '\n' +
-                "Дата последних изменений:" + dateOfLastChange + '\n' +
-                '}';
+                "Дата последних изменений:" + dateOfLastChange;
     }
 }
