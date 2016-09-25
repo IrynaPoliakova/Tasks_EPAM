@@ -29,20 +29,21 @@ public class Main {
             }
         }
 
-        Class c = square.getClass();
-        Field[] allFields = c.getDeclaredFields();
-        for (Field field : allFields) {
-            System.out.println("Модификатор:" + field.getModifiers() + "\n" +
-                    "Тип: " + field.getType() + "\n" + "Имя: " + field.getName());
-        }
+//        Class c = square.getClass();
+//        Field[] allFields = c.getDeclaredFields();
+//        for (Field field : allFields) {
+//            System.out.println("Модификатор:" + field.getModifiers() + "\n" +
+//                    "Тип: " + field.getType() + "\n" + "Имя: " + field.getName());
+//        }
+//
+//        Method[] methodsAll = c.getDeclaredMethods();
+//        for (Method m : methodsAll) {
+//            Annotation[] annotations = m.getAnnotations();
+//            System.out.print("\t");
+//            for (Annotation a : annotations){
+//                System.out.print("@" + a.annotationType().getSimpleName() + " ");
+//            }
+//        }
 
-        Method[] methodsAll = c.getDeclaredMethods();
-        for (Method m : methodsAll) {
-            Annotation[] annotations = m.getAnnotations();
-            System.out.print("\t");
-            for (Annotation a : annotations){
-                System.out.print("@" + a.annotationType().getSimpleName() + " ");
-            }
-        }
     }
 }
