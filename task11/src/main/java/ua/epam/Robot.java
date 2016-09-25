@@ -7,6 +7,7 @@ public class Robot {
     private double x = 0;
     private double y = 0;
     protected double course = 0;
+
     // Робот управляется оператором
     private Operator operator;
 
