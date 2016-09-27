@@ -4,7 +4,7 @@ package ua.epam;
  * Created by Iryna_Poliakova on 9/19/2016.
  */
 public class workerRD extends workerEPAM {
-    Department department;
+    private Department department;
 
     public workerRD(String name, int age, String education, String maritalStatus, Department department) {
         super(name, age, education, maritalStatus);

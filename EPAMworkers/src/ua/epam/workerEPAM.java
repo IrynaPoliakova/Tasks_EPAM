@@ -4,10 +4,10 @@ package ua.epam;
  * Created by Iryna_Poliakova on 9/19/2016.
  */
 public class workerEPAM {
-    String name;
-    int age;
-    String education;
-    String maritalStatus;
+    private String name;
+    private int age;
+    private String education;
+    private String maritalStatus;
 
     public workerEPAM(String name, int age, String education, String maritalStatus) {
         this.name = name;

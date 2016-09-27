@@ -1,13 +1,10 @@
 package ua.epam.controller;
 import ua.epam.model.Model;
 import ua.epam.View;
-import ua.epam.model.entity.CreateRegForm;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static ua.epam.View.WRONG_INPUT;
 
 /**
  * Created by Iryna_Poliakova on 9/22/2016.
@@ -44,7 +41,7 @@ public class Controller implements RexegNotebook {
                 inputRegForm.setDateOfRegistration(checkInput(DATE,sc,view.INPUT_REGISTRATION_DATE));
                 inputRegForm.setDateOfRegistration(checkInput(DATE,sc,view.INPUT_LAST_CHANGE_DATE));
 
-        System.out.println((model.createContact(
+        view.printMessage((model.createContact(
                 inputRegForm.getAbonentSurname(),
                 inputRegForm.getAbonentName(),
                 inputRegForm.getAbonentPatronymic(),

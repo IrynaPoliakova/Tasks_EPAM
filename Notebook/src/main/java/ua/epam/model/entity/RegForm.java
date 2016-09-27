@@ -3,7 +3,7 @@ package ua.epam.model.entity;
 /**
  * Created by Iryna_Poliakova on 9/22/2016.
  */
-public class CreateRegForm {
+public class RegForm {
     private String abonentSurname;
     private String abonentName;
     private String abonentPatronymic; //отчества
@@ -24,10 +24,10 @@ public class CreateRegForm {
     private String dateOfLastChange;
 
 
-    public CreateRegForm(String abonentSurname, String abonentName,String abonentPatronymic,String login,
-                         String group, String comment,String homeTelephone,String mobileNumber1, String mobileNumber2,
-                         String email,String skype,String index,String city,String street,String homeNumber,
-                         String flatNumber,String dateOfRegistration,String dateOfLastChange){
+    public RegForm(String abonentSurname, String abonentName, String abonentPatronymic, String login,
+                   String group, String comment, String homeTelephone, String mobileNumber1, String mobileNumber2,
+                   String email, String skype, String index, String city, String street, String homeNumber,
+                   String flatNumber, String dateOfRegistration, String dateOfLastChange){
         this.abonentSurname = abonentSurname;
         this.abonentName = abonentName;
         this.abonentPatronymic = abonentPatronymic;
