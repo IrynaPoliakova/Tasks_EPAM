@@ -7,6 +7,10 @@ public class Author {
 
     public Author() {
     }
+    private Long id;
+    private String name;
+    private int birthDate;
+    private int deathDate;
 
     public Author(Long id, String name, int birthDate, int deathDate) {
         this.id = id;
@@ -14,14 +18,6 @@ public class Author {
         this.birthDate = birthDate;
         this.deathDate = deathDate;
     }
-
-    private Long id;
-
-    private String name;
-
-    private int birthDate;
-
-    private int deathDate;
 
     public Long getId() {
         return id;
