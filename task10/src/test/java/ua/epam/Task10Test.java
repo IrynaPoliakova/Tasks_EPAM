@@ -38,6 +38,10 @@ public class Task10Test {
         System.out.println(route);
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     public void creatLisenceNullHuman() throws Exception {
         exp.expect(IllegalArgumentException.class);

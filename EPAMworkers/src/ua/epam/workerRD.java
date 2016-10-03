@@ -38,4 +38,7 @@ public class workerRD extends workerEPAM {
         result = 31 * result + (department != null ? department.hashCode() : 0);
         return result;
     }
+
+
+
 }
