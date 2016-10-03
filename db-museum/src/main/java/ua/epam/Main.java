@@ -99,20 +99,22 @@ public class Main {
 //            System.out.println(h);
 //        }
 
-        VisitorDao visitorDao = new VisitorDao();
-        Visitor visitor = new Visitor(null, "Vasia");
-        System.out.println("Show data from table Visitors");
-        List<Visitor> allVisitors = visitorDao.getAll();
-        for (Visitor vis : allVisitors){
-            System.out.println(vis);
-        }
-        visitorDao.add(visitor);
-        System.out.println("\n" + "After add  : ");
-        visitorDao.getAll();
-        allVisitors = visitorDao.getAll();
-        for (Visitor vis : allVisitors){
-            System.out.println(vis);
-        }
+//        VisitorDao visitorDao = new VisitorDao();
+//        Visitor visitor = new Visitor(null, "Vasia");
+//        System.out.println("Show data from table Visitors");
+//        List<Visitor> allVisitors = visitorDao.getAll();
+//        for (Visitor vis : allVisitors){
+//            System.out.println(vis);
+//        }
+//        visitorDao.add(visitor);
+//        System.out.println("\n" + "After add  : ");
+//        visitorDao.getAll();
+//        allVisitors = visitorDao.getAll();
+//        for (Visitor vis : allVisitors){
+//            System.out.println(vis);
+//        }
+
+
 
 
 
