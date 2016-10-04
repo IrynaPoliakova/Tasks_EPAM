@@ -11,11 +11,13 @@ public class Author {
     private String name;
     private int birthDate;
     private int deathDate;
+    private String country;
 
-    public Author( String name, int birthDate, int deathDate) {
+    public Author( String name, int birthDate, int deathDate, String country) {
         this.name = name;
         this.birthDate = birthDate;
         this.deathDate = deathDate;
+        this.country = country;
     }
 
     public String getName() {
@@ -41,6 +43,10 @@ public class Author {
     public void setDeathDate(int deathDate) {
         this.deathDate = deathDate;
     }
+
+    public String getCountry() { return country; }
+
+    public void setCountry(String country) { this.country = country; }
 
     @Override
     public String toString() {
