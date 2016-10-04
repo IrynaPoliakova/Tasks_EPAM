@@ -2,15 +2,15 @@
 <!--xsd  -->
 <authors>
     <list>
-        <item id="1">
+        <person id="1">
             <name>Vincent Willem van Gogh</name>
             <birthYear>1853</birthYear>
             <deathYear>1890</deathYear>
-        </item>
-        <item id="2">
+        </person>
+        <person id="2">
             <name>Pablo Picasso</name>
             <birthYear>1881</birthYear>
             <deathYear>1973</deathYear>
-        </item>
+        </person>
     </list>
 </authors>

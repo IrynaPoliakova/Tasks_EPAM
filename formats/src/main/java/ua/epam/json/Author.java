@@ -7,24 +7,15 @@ public class Author {
 
     public Author() {
     }
-    private Long id;
+
     private String name;
     private int birthDate;
     private int deathDate;
 
-    public Author(Long id, String name, int birthDate, int deathDate) {
-        this.id = id;
+    public Author( String name, int birthDate, int deathDate) {
         this.name = name;
         this.birthDate = birthDate;
         this.deathDate = deathDate;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -54,7 +45,6 @@ public class Author {
     @Override
     public String toString() {
         return "Author{" +
-                "id=" + id +
                 ", name='" + name + '\'' +
                 ", birthDate=" + birthDate +
                 ", deathDate=" + deathDate +
