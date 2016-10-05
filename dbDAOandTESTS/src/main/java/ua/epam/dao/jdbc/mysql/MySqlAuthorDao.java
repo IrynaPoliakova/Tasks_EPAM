@@ -13,11 +13,12 @@ import java.sql.PreparedStatement;
  */
 public class MySqlAuthorDao implements AuthorDao {
 
-    private static final String SELECT_ALL_AUTHORS = "SELECT * FROM goods";
-    private static final String SELECT_AUTHOR_BY_NAME = "SELECT * FROM authors WHERE name = ?";
-    private static final String SELECT_AUTHOR_BY_ID = "SELECT * FROM authors WHERE id = ?";
+    private static final String SELECT_ALL_AUTHORS = "SELECT * FROM author";
+    private static final String SELECT_AUTHOR_BY_NAME = "SELECT * FROM author WHERE name = ?";
+    private static final String SELECT_AUTHOR_BY_ID = "SELECT * FROM author WHERE id = ?";
     private static final String INSERT_AUTHOR ="INSERT INTO author(name, bith_date, death_date) VALUES(?,?,?)";
-    private static final String UPDATE_AUTHOR_NAME_BY_ID ="UPDATE author SET name = ? WHERE id = ?)";
+    private static final String UPDATE_AUTHOR_BY_ID ="UPDATE author SET name = ?, bith_date = ?, death_date = ? WHERE id = ?";
+    private static final String DELETE_AUTHOR_BY_ID = "DELETE FROM author WHERE id = ?";
 
     @Override
     public Author findById( int id) {
@@ -27,8 +28,9 @@ public class MySqlAuthorDao implements AuthorDao {
                     .prepareStatement(SELECT_AUTHOR_BY_ID)){
                 query.setInt(1, id);
                 ResultSet rs = query.executeQuery();
-                author = getAuthorsFromResultSet(rs);
-
+                while( rs.next() ) {
+                    author = getAuthorsFromResultSet(rs);
+                }
             }catch(Exception ex){
                 //log
                 throw new RuntimeException(ex);
@@ -39,9 +41,9 @@ public class MySqlAuthorDao implements AuthorDao {
     @Override
     public List<Author> findAll() {
         List<Author> result = new ArrayList<>();
-        Connection connection =  MySqlJdbcDaoFactory.getConnection();
-        try(Statement query = connection.createStatement()){
-
+        try{
+            Connection connection =  MySqlJdbcDaoFactory.getConnection();
+            Statement query = connection.createStatement();
             ResultSet rs = query.executeQuery(SELECT_ALL_AUTHORS);
             while( rs.next() ){
                 result.add(getAuthorsFromResultSet(rs));
@@ -58,20 +60,18 @@ public class MySqlAuthorDao implements AuthorDao {
         Author authors = new Author();
         authors.setId(resultSet.getLong("id"));
         authors.setName(resultSet.getString("name"));
-        authors.setBirthDate(resultSet.getInt("birth_date"));
+        authors.setBirthDate(resultSet.getInt("bith_date"));
         authors.setDeathDate(resultSet.getInt("death_date"));
         return authors;
     }
 
     @Override
-    public void update(int id, String name) {
-        Connection connection =  MySqlJdbcDaoFactory.getConnection();
-        try(PreparedStatement query = connection
-                .prepareStatement(UPDATE_AUTHOR_NAME_BY_ID)){
-            query.setInt(2, id);
-            query.setString(1,name);
-            ResultSet rs = query.executeQuery();
-
+    public void update(Author entity) {
+        try{
+            Connection connection =  MySqlJdbcDaoFactory.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_AUTHOR_BY_ID);
+            preparedStatement.setLong(1, entity.getId());
+            preparedStatement.executeUpdate();
         }catch(Exception ex){
             //log
             throw new RuntimeException(ex);
@@ -82,28 +82,31 @@ public class MySqlAuthorDao implements AuthorDao {
 
     @Override
     public void delete(int id) {
-        // TODO Auto-generated method stub
+        try{
+            Connection connection =  MySqlJdbcDaoFactory.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_AUTHOR_BY_ID);
+            preparedStatement.setLong(1, id);
+            preparedStatement.executeUpdate();
+        }catch(Exception ex){
+            //log
+            throw new RuntimeException(ex);
+        }
 
     }
 
     @Override
     public void insert(Author entity) {
-        PreparedStatement preparedStatement = null;
-        try {
-            Connection connection =  MySqlJdbcDaoFactory.getConnection();
-            preparedStatement = connection.prepareStatement(INSERT_AUTHOR);
-            preparedStatement.setString(1, entity.getName());
-            preparedStatement.setInt(2, entity.getBirthDate());
-            preparedStatement.setInt(3, entity.getDeathDate());
-            preparedStatement.executeUpdate();
-
-            preparedStatement.close();
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
+            try {
+                Connection connection =  MySqlJdbcDaoFactory.getConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement(INSERT_AUTHOR);
+                preparedStatement.setString(1, entity.getName());
+                preparedStatement.setInt(2, entity.getBirthDate());
+                preparedStatement.setInt(3, entity.getDeathDate());
+                preparedStatement.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
-    }
 
     @Override
     public List<Author> findByName(String name) {

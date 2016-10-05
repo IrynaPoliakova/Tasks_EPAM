@@ -12,19 +12,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        AuthorDao authorDao = new AuthorDao();
-//        Author author = new Author(null, "name", 11, 11);
-//        System.out.println("Start : ");
-//        List<Author> allAuthors = authorDao.getAll();
-//        for (Author a : allAuthors) {
-//            System.out.println(a);
-//        }
-//        authorDao.add(author);
-//        System.out.println("\n" + "After add  : ");
-//        allAuthors = authorDao.getAll();
-//        for (Author a : allAuthors) {
-//            System.out.println(a);
-//        }
+        AuthorDao authorDao = new AuthorDao();
+        Author author = new Author(null, "name", 11, 11);
+        System.out.println("Start : ");
+        List<Author> allAuthors = authorDao.getAll();
+        for (Author a : allAuthors) {
+            System.out.println(a);
+        }
+        authorDao.add(author);
+        System.out.println("\n" + "After add  : ");
+        allAuthors = authorDao.getAll();
+        for (Author a : allAuthors) {
+            System.out.println(a);
+        }
 
 
 //        EmployeeDao employeeDao = new EmployeeDao();
