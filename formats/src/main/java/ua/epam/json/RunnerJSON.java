@@ -10,6 +10,7 @@ import java.io.IOException;
  */
 public class RunnerJSON {
     public static void main(String[] args) throws IOException {
+        //Convert Java object to JSON
         Author a1 = new Author("William Shakespeare", 1564, 1616, "England");
         JSONObject json = new JSONObject();
         json.put("name", a1.getName());
