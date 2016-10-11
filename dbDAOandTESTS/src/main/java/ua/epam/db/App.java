@@ -3,6 +3,7 @@ package ua.epam.db;
 import ua.epam.dao.AuthorDao;
 import ua.epam.dao.DaoFactory;
 import ua.epam.entities.Author;
+import ua.epam.services.AuthorServices;
 
 import java.util.List;
 
@@ -43,7 +44,7 @@ public class App {
 //        Author author3 = new Author((long) 17, "TEST", 18, 20);
 //        authorDao3.update(author3);
 //        System.out.println(authorDao3.findById(17));
-        authorDao3.delete(23);
+        //authorDao3.delete(23);
 
         //работает findByName
 //        DaoFactory factory4 = DaoFactory.getInstance();
@@ -51,7 +52,8 @@ public class App {
 //        System.out.println(authorDao4.findByName("name"));
 
 
-
+        AuthorServices age = AuthorServices.getInstance();
+        System.out.println(age.getAuthorAge(5));
 
 
 

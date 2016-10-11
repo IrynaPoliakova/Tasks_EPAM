@@ -58,7 +58,7 @@ public class MySqlAuthorDao implements AuthorDao {
     private Author getAuthorsFromResultSet(ResultSet resultSet)
             throws SQLException {
         Author authors = new Author();
-        authors.setId(resultSet.getLong("id"));
+        authors.setId(resultSet.getInt("id"));
         authors.setName(resultSet.getString("name"));
         authors.setBirthDate(resultSet.getInt("bith_date"));
         authors.setDeathDate(resultSet.getInt("death_date"));

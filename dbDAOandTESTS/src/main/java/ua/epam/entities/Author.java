@@ -7,23 +7,23 @@ public class Author {
 
     public Author() {
     }
-    private Long id;
+    private int id;
     private String name;
     private int birthDate;
     private int deathDate;
 
-    public Author(Long id, String name, int birthDate, int deathDate) {
+    public Author(int id, String name, int birthDate, int deathDate) {
         this.id = id;
         this.name = name;
         this.birthDate = birthDate;
         this.deathDate = deathDate;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
