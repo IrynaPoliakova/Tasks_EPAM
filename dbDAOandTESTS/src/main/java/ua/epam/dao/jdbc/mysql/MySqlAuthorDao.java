@@ -85,7 +85,7 @@ public class MySqlAuthorDao implements AuthorDao {
         try{
             Connection connection =  MySqlJdbcDaoFactory.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_AUTHOR_BY_ID);
-            preparedStatement.setLong(1, id);
+            preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         }catch(Exception ex){
             //log

@@ -52,6 +52,29 @@ public class Author {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Author)) return false;
+
+        Author author = (Author) o;
+
+        if (id != author.id) return false;
+        if (birthDate != author.birthDate) return false;
+        if (deathDate != author.deathDate) return false;
+        return name != null ? name.equals(author.name) : author.name == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + birthDate;
+        result = 31 * result + deathDate;
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "Author{" +
                 "id=" + id +
