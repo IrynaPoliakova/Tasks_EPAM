@@ -10,36 +10,36 @@ import static ua.epam.Calculator.*;
  */
 public class CalculatorTest extends TestBase {
 
-    @Test(groups = {"addition", "functional", "regression", "positive"})
-    public void testSumLong() throws Exception {
-        assertEquals(5,calculator.sum(2,3));
+    @Test(dataProvider = "getDataProviderLong", groups = {"addition", "long"} )
+    public void testSumLong( long a, long b, long expected) throws Exception {
+        assertEquals(calculator.sum(a,b), expected);
     }
 
 
-    @Test(groups = {"addition", "functional", "regression", "positive"})
-    public void testSumDouble() throws Exception {
-        assertEquals(11.0,calculator.sum(5.5,5.5));
+    @Test(dataProvider = "getDataProviderDouble", groups = {"addition", "double"})
+    public void testSumDouble(double a, double b, double expected) throws Exception {
+        assertEquals(calculator.sum(a,b), expected);
     }
 
 
-    @Test
-    public void testSubLong() throws Exception {
-
+    @Test(dataProvider = "getDataProviderLong", groups = {"subtraction", "long"})
+    public void testSubLong(long a, long b, long expected) throws Exception {
+        assertEquals(calculator.sub(a,b), expected);
     }
 
-    @Test
-    public void testSubDouble() throws Exception {
-
+    @Test(dataProvider = "getDataProviderDouble", groups = {"subtraction", "double"})
+    public void testSubDouble(double a, double b, double expected) throws Exception {
+        assertEquals(calculator.sub(a,b), expected);
     }
 
-    @Test
-    public void testMultLong() throws Exception {
-
+    @Test(dataProvider = "getDataProviderLong", groups = {"multiplication", "long"} )
+    public void testMultLong(long a, long b, long expected) throws Exception {
+        assertEquals(calculator.mult(a,b),expected);
     }
 
-    @Test
-    public void testMultDouble() throws Exception {
-
+    @Test(dataProvider = "getDataProviderDouble", groups = {"multiplication", "double"})
+    public void testMultDouble(double a, double b, double expected) throws Exception {
+        assertEquals(calculator.mult(a,b),expected);
     }
 
     @Test
