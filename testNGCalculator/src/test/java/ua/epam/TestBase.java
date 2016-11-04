@@ -1,6 +1,7 @@
 package ua.epam;
 
 import org.testng.annotations.*;
+import org.testng.log4testng.Logger;
 
 import java.lang.reflect.Method;
 
@@ -10,10 +11,24 @@ import java.lang.reflect.Method;
 public class TestBase {
     public Calculator calculator;
 
+    //static final Logger LOGGER = Logger.getLogger(CalculatorTest.class);
+
+//    @BeforeMethod(alwaysRun = true)
+//    public void logging(){
+//        CalculatorTest calculatorTest = new CalculatorTest();
+//        Class clazz = calculatorTest.getClass();
+////        Method method = clazz.getMethod();
+////        LOGGER.info("Test class = " + clazz + "Method name = " + method);
+//    }
+
     @BeforeClass(alwaysRun = true)
-    public void beforeSuite() {
-        System.out.println();
+    public void beforeClass() {
         calculator = new Calculator();
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void afterClass() {
+        System.out.println("Tests have run");
     }
 
 
@@ -25,7 +40,6 @@ public class TestBase {
     public static Object[][] getDataLong(Method method) {
         String nameSheet = method.getName().toString();
         ReaderXLS readerXLS = new ReaderXLS();
-
         return readerXLS.parseLong(nameSheet);
     }
 
@@ -33,7 +47,6 @@ public class TestBase {
     public static Object[][] getDataDouble(Method method) {
         String nameSheet = method.getName().toString();
         ReaderXLS readerXLS = new ReaderXLS();
-
         return readerXLS.parseDouble(nameSheet);
     }
 

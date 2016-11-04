@@ -31,7 +31,6 @@ public class ReaderXLS {
         int column = sheet.getRow(0).getPhysicalNumberOfCells();
         Object[][] result = new Object[rows][column];
 
-
         for (int i = 0; i < rows; i++) {
             Row row = sheet.getRow(i);
             for (int j = 0; j < column; j++ ) {
@@ -39,7 +38,6 @@ public class ReaderXLS {
                 result[i][j] = (long)cell.getNumericCellValue();
             }
         }
-
         return result;
     }
 
@@ -50,7 +48,6 @@ public class ReaderXLS {
         int column = sheet.getRow(0).getPhysicalNumberOfCells();
         Object[][] result = new Object[rows][column];
 
-
         for (int i = 0; i < rows; i++) {
             Row row = sheet.getRow(i);
             for (int j = 0; j < column; j++ ) {
@@ -58,7 +55,6 @@ public class ReaderXLS {
                 result[i][j] = (double)cell.getNumericCellValue();
             }
         }
-
         return result;
     }
 }

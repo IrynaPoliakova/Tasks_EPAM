@@ -6,9 +6,9 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-//        Calculator calc = new Calculator();
+        Calculator calc = new Calculator();
 //        calc.pow(2.0,2.0);
-        System.out.println(Integer.MAX_VALUE + 1);
+        System.out.println(calc.sin(90));
 
     }
 }
