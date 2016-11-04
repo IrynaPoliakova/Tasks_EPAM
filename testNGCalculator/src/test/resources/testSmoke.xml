@@ -3,6 +3,10 @@
 
 <suite name="Group Test" parallel="false">
 
+    <listeners>
+        <listener class-name="ua.epam.Listener" />
+    </listeners>
+
     <test name="TestNG Group">
         <groups>
             <run>

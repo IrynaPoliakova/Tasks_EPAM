@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Group Test" parallel="false">
+<suite name="Group Test" parallel="methods" thread-count="6">
+
+    <listeners>
+        <listener class-name="ua.epam.Listener" />
+    </listeners>
 
     <test name="TestNG Group">
         <groups>

@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 /**
  * Created by Iryna_Poliakova on 10/28/2016.
  */
-public class TestBase {
+public class TestBase{
     public Calculator calculator;
 
     //static final Logger LOGGER = Logger.getLogger(CalculatorTest.class);

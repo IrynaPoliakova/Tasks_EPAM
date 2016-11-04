@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Group Test]">
+  <listeners>
+    <listener class-name="ua.epam.Listener"/>
+  </listeners>
+  <test name="TestNG Group(failed)">
+    <groups>
+      <run>
+        <include name="positive"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="ua.epam.CalculatorTest">
+        <methods>
+          <include name="testCtg" invocation-numbers="1 2"/>
+          <include name="testCos" invocation-numbers="0 1 2"/>
+          <include name="testTg" invocation-numbers="0 1 2 3 4"/>
+          <include name="afterClass"/>
+          <include name="testPow" invocation-numbers="2"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- ua.epam.CalculatorTest -->
+    </classes>
+  </test> <!-- TestNG Group(failed) -->
+</suite> <!-- Failed suite [Group Test] -->

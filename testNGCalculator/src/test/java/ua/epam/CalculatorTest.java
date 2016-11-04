@@ -54,6 +54,7 @@ public class CalculatorTest extends TestBase {
             expectedExceptions = NumberFormatException.class)
     public void testDivOnZeroLong(long a, long b, long expected) throws Exception {
         assertEquals(calculator.div(a,b),expected);
+        Thread.sleep(2000);
     }
 
     @Test(dataProvider = "getDataProviderDouble", groups = {"positive"})
@@ -65,6 +66,7 @@ public class CalculatorTest extends TestBase {
             expectedExceptions = NumberFormatException.class)
     public void testDivOnZeroDouble(double a, double b, double expected) throws Exception {
         assertEquals(calculator.div(a,b),expected);
+        Thread.sleep(2000);
     }
 
     @Test(dataProvider = "getDataProviderDouble", groups = {"positive"})
@@ -81,6 +83,7 @@ public class CalculatorTest extends TestBase {
             expectedExceptions = NumberFormatException.class)
     public void testSqrtNegativeNum(double a, double expected) throws Exception {
         assertEquals(calculator.sqrt(a), expected);
+        Thread.sleep(2000);
     }
 
     @Test(dataProvider = "getDataProviderDouble", groups = {"positive"})
@@ -97,6 +100,7 @@ public class CalculatorTest extends TestBase {
             expectedExceptions = NumberFormatException.class)
     public void testCtgWithZero(double a, double expected) throws Exception {
         assertEquals(calculator.ctg(a), expected);
+        Thread.sleep(2000);
     }
 
     @Test(dataProvider = "getDataProviderDouble", groups = {"positive"})
@@ -117,6 +121,7 @@ public class CalculatorTest extends TestBase {
     @Test(dataProvider = "getDataProviderLong", groups = {"negaive"})
     public void testIsPositiveWithWrondData(long a) throws Exception {
         assertFalse(calculator.isPositive(a));
+        Thread.sleep(2000);
     }
 
     @Test(dataProvider = "getDataProviderLong", groups = {"positive"})
@@ -127,6 +132,7 @@ public class CalculatorTest extends TestBase {
     @Test(dataProvider = "getDataProviderLong", groups = {"negative"})
     public void testIsNegativeWithWrondData(long a) throws Exception {
         assertFalse(calculator.isNegative(a));
+        Thread.sleep(2000);
     }
 
 }

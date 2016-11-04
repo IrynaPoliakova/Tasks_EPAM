@@ -2,6 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Group Test" parallel="false">
+    <listeners>
+        <listener class-name="ua.epam.Listener" />
+    </listeners>
 
     <test name="TestNG Group">
         <groups>
